@@ -1,0 +1,115 @@
+@import "./sass/variables.scss";
+@import "./sass/mixins.scss";
+
+.resume_wrapper{
+    background: rgba( $mainBgColor, .9 );
+    border-radius: 20px;
+    padding: 45px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+
+    @include respond-to(phablet){
+        margin-top: 20px;
+    }
+
+    .resume_item{
+        padding-left: 20px;
+        position: relative;
+
+        .list{
+            margin: 0;
+            padding-bottom: 40px;
+
+            @include respond-to(phablet){
+                padding-bottom: 20px;
+            }
+        }
+
+        h5{
+            @include respond-to(phablet){
+                font-size: 18px;
+            }
+        }
+
+        .duration_post{
+            font-weight: 500;
+            @include respond-to(phablet){
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+        }
+
+        p{
+            @include respond-to(phablet){
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+        }
+
+        &:before{
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: -5px;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: $h2Color;
+
+            @include respond-to(phablet){
+                top: 5px;
+            }
+        }
+
+        &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 2px;
+            height: 100%;
+            background: #676767;
+        }
+
+        ul{
+            padding-left: 20px;
+
+            li{
+                display: inline-block;
+                margin-right: 45px;
+                position: relative;
+
+                @include respond-to(phablet){
+                    font-size: 14px;
+                }
+
+                &:before{
+                    content:"";
+                    position:absolute;
+                    display: block;
+                    top: 10px;
+                    left: -12px;
+                    width:8px;
+                    height:8px;
+                    border-radius: 6px;
+                    background:#CB6F81;
+                    box-shadow:-1px -1px 2px #004977;
+                }
+            }
+        }
+    }
+}
+
+// .page_content.resume{
+//     background: url(https://zen-perlman-454582.netlify.com/public/images/resume.svg)no-repeat top right;
+
+//     @include respond-to(slarge){
+//         background-size: 800px;
+//     }
+
+//     @include respond-to(phablet){
+//         background-size: contain;
+//     }
+// }

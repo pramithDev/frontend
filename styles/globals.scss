@@ -1,0 +1,62 @@
+@import "./sass/variables.scss";
+@import "./sass/mixins.scss";
+
+.form-control{
+  background: rgba( $white, .65 ) !important;
+  border-radius: 8px !important;
+  padding-bottom: 8px !important;
+
+  &:focus{
+      border-color: $h2Color !important;
+      box-shadow: 0 0 0 0.2rem rgba(235,170,93,.25) !important;
+  }
+}
+
+.btn{
+  &:hover{
+      opacity: 0.8;
+      transition: all 0.4s ease-in-out;
+  }
+}
+
+.contact_form_modal{
+  .modal-content{
+      background: #f2f4f6;
+  }
+
+  .modal-body{
+      padding-bottom: 8px;
+      padding-top: 30px;
+  }
+
+  .modal-footer{
+      justify-content: center;
+      border-top: none;
+      padding-bottom: 30px;
+  }
+
+  .contact-modal-btn{
+      background-color: #3085d6;
+      box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(50,100,150,.4);
+      border-left-color: rgb(48, 133, 214);
+      border-right-color: rgb(48, 133, 214);
+      padding: 6px 25px;
+  }
+}
+
+.portfolio-detail-image{
+  .modal-content{
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.close{
+  outline: 0;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1;
+}

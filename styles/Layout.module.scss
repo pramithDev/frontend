@@ -1,0 +1,304 @@
+@import "./sass/variables.scss";
+@import "./sass/mixins.scss";
+
+.top_header{
+    background: $mainBgColor;
+    position: fixed;
+    z-index: 100;
+    width:calc(100% - 85px);
+    height: 75px;
+    transition: all 0.5s ease-in-out;
+    border-bottom: 1px solid #dedede;
+    box-shadow: 5px 4px 6px rgba(0,0,0,0.1);
+    padding: 0 85px 0 85px;
+
+    @include respond-to(xlarge){
+        padding: 0 50px 0 50px;
+    }
+    
+    @include respond-to(desktop){
+        padding: 0 40px 0 40px;
+    }
+
+    @include respond-to(phablet){
+        padding: 0 20px 0 20px;
+        width: 100%;
+    }
+
+    @include respond-to(mobilesm){
+        padding: 0 10px 10px 10px;
+        height: 106px;
+    }
+
+    a{
+        display: block;
+    }
+
+    &.up{
+        box-shadow: 5px 4px 6px rgba(0,0,0,0.25);
+    }
+}
+
+.logo_wrapper {
+    display: inline-block;
+    margin:17px 0 0;
+
+    @include respond-to(phablet){
+        margin:20px 0 0;
+    }
+
+    img{
+        width: 180px;
+
+        @include respond-to(phablet){
+            width: 150px;
+        }
+    }
+
+    @include respond-to(mobilesm){
+        display: block;
+
+    }
+}
+
+.social_wrapper{
+    float: right;
+    margin:22px 0 0 0;
+
+    ul{
+        margin:0;
+        padding: 0;
+
+        li{
+            list-style-type: none;
+            display: inline-block;
+
+            a{
+                text-decoration: none;
+                display: block;
+                margin: 0 10px;
+
+                &:hover{
+                    opacity: 0.6;
+                    transition: all 0.7s ease-in-out;
+                }
+
+                img{
+                    width: 28px;
+
+                    @include respond-to(phablet){
+                        width: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond-to(mobilesm){
+        float: inherit;
+        margin-top: 15px;
+    }
+}
+
+.Side_nav_main{
+    width: 85px;
+    height: 100vh;
+    display: inline-block;
+    background-image: $sideNavBgColor;
+    position: fixed;
+    border-right: 1px solid $h2Color;
+    z-index: 100;
+
+    @include respond-to(phablet){
+        width: 100%;
+        height: auto;
+        margin-top: 75px;
+    }
+
+    @include respond-to(mobilesm){
+        margin-top: 106px;
+    }
+}
+
+.main_container{
+    .main_layout{
+        margin-left: 85px;
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% - 85px);
+        background: $mainBgColor;
+        min-height: 100vh;
+
+        @include respond-to(phablet){
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+.page_content_wrapper{
+    margin-top: 107px;
+
+    @include respond-to(phablet){
+        margin-top: 160px;
+    }
+
+    @include respond-to(mobilesm){
+        margin-top: 185px;
+    }
+}
+
+.page_content{
+    padding-left: 85px;
+    padding-bottom: 50px;
+    padding-right: 85px;
+
+    @include respond-to(xlarge){
+        padding: 0 50px 80px 50px;
+    }
+
+    @include respond-to(desktop){
+        padding: 0 40px 80px 40px;
+    }
+
+    @include respond-to(phablet){
+        padding: 0 20px 80px 20px;
+    }
+
+    @include respond-to(phablet){
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+    }
+
+    @include respond-to(mobilesm){
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+    }
+
+
+    h3{
+        color: $h2Color;
+        margin-bottom: 45px;
+        font-size: 26px;
+        text-transform: capitalize;
+
+        @include respond-to(desktop){
+            margin-bottom: 40px;
+        }
+
+        @include respond-to(phablet){
+             font-size: 20px;
+        }
+
+        @include respond-to(mobile){
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        &:after{
+            content:"";
+            display: block;
+            height: 2px;
+            width: 250px;
+            position: relative;
+            right: 85px;
+            background: $h2Color;
+            margin-top: 10px;
+
+            @include respond-to(phablet){
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+.side_nav{
+    padding: 0;
+    margin: 0;
+
+    @include respond-to(phablet){
+        display: flex;
+    }
+
+    svg{
+        display: block;
+        margin: 0 auto;
+        font-size: 1.7rem;
+
+        @include respond-to(phablet){
+            font-size: 1.6rem;
+        }
+
+        @include respond-to(mobile){
+            font-size: 1.4rem;
+        }
+    }
+
+    li{
+        text-align: center;
+        list-style-type: none;
+
+        @include respond-to(phablet){
+            flex-grow: 1;
+        }
+        
+        a{
+            color: $sidenavActive;
+            text-decoration: none;
+            display: block;
+            padding: 18px 10px;
+            transition: all 0.3s ease-in-out;
+            background-image: $sidenavGradient;
+
+            @include respond-to(phablet){
+                padding: 10px 10px;
+            }
+
+            @include respond-to(mobile){
+                padding: 8px 10px;
+            }
+
+
+            &.selected{
+                background: $h2Color !important;
+                font-weight: 500;
+
+                @include respond-to(phablet){
+                    font-weight: normal;
+                }
+
+                &:hover{
+                    background: $h2Color;
+
+                    @include respond-to(phablet){
+                        background-image: $sidenavGradient;
+                    }
+                }
+
+                svg,span{
+                    color:#465b7a;
+                }
+            }
+
+            &:hover{
+                background: $sidenavHover;
+                color:$activeTextColor;
+                // font-weight: 600;
+
+                @include respond-to(phablet){
+                    font-weight: normal;
+                }
+            }
+
+            span{
+                font-size: 14px;
+
+                @include respond-to(mobilesm){
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

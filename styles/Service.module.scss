@@ -1,0 +1,143 @@
+@import "./sass/variables.scss";
+@import "./sass/mixins.scss";
+
+.services_wrapper{
+    margin-right: -30px;
+    margin-left: -30px;
+
+    @include respond-to(mobile){
+        margin-right: -25px;
+        margin-left: -25px;
+    }
+
+    .service_item_wrapper{
+        margin-bottom: 30px;
+
+        @include respond-to(phablet){
+            margin-bottom: 20px;
+        }
+    }
+
+    .service_item {
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        padding: 30px 20px;
+        text-align: center;
+        min-height: 200px;
+        max-height: 200px;
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+
+        @include respond-to(slarge){
+            min-height: 250px;
+            max-height: 250px;
+        }
+
+        @include respond-to(desktop){
+            min-height: 160px;
+            max-height: 160px;
+        }
+
+        @include respond-to(tab-ls){
+            min-height: 180px;
+            max-height: 180px;
+        }
+
+        // @include respond-to(phablet){
+        //     margin-top:15px;
+        // }
+
+        @include respond-to(bsmobile){
+            display: block;
+            min-height: 300px;
+            max-height: 300px;
+        }
+
+        img{
+            height: auto;
+            max-width: 250px;
+
+            @include respond-to(xlarge){
+                max-width: 200px;
+            }
+
+            @include respond-to(phablet){
+                max-width: 150px;
+            }
+
+            @include respond-to(bsmobile){
+                max-width: 200px;
+            }
+
+            @include respond-to(mobilesm){
+                max-width: 160px;
+            }
+        }
+    } 
+
+    span{
+        display: flex;
+        align-items: center;
+        margin-right: 25px;
+        vertical-align: top;
+
+        @include respond-to(xlarge){
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            display: block;
+            margin:0 auto;
+        }
+
+        @include respond-to(bsmobile){
+            width: 100%;
+            height: 120px;
+            margin-left: auto;
+        }
+
+        @include respond-to(mobilesm){
+            height: 90px;
+        }
+    }
+
+    .content{
+        display: inline-block;
+        max-width: 300px;
+        text-align: left;
+
+        @include respond-to(xlarge){
+            display: block;
+            max-width: 65%;
+            padding: 0 35px;
+        }
+
+        @include respond-to(bsmobile){
+            max-width: 100%;
+            margin-top: 30px;
+            padding: 0;
+        }
+
+        @include respond-to(mobilesm){
+            margin-top: 10px;
+        }
+
+        h5{
+            @include respond-to(phablet){
+                font-size: 18px;
+            }
+
+            @include respond-to(bsmobile){
+                font-size: 16px;
+            }
+        }
+
+        p{
+            margin: 0;
+
+            @include respond-to(phablet){
+                font-size: 14px;
+            }
+        }
+    }
+}

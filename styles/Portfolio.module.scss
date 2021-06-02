@@ -1,0 +1,492 @@
+@import "./sass/variables.scss";
+@import "./sass/mixins.scss";
+
+.portfolio_items{
+    margin-top:20px;
+
+    @include respond-to(phablet){
+        margin-top:30px;
+    }
+
+    @include respond-to(bsmobile){
+        justify-content: center;
+    }
+
+    .block a{
+        display: block;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 10px;
+        position: relative;
+
+        &:hover .overlay{
+            background-color: rgba(64, 84, 94,0.8);
+            transition: all 0.5s ease-in-out;
+        }
+
+        &:hover .hovered{
+            visibility: visible;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &:hover .name{
+            top: 32%;
+            transition: all 0.4s ease-in-out;
+
+            @include respond-to(tab-ls){
+                top:50%;
+            }
+
+            @include respond-to(phablet){
+                top:32%;
+            }
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+
+        p{
+            margin:0;
+        }
+    }
+
+    .block{
+        margin-bottom: 20px;
+        position: relative;
+        padding: 0 80px 0 0;
+
+        @include respond-to(xxxlargemin){
+            padding: 0 220px 0 0;
+        }
+
+        @include respond-to(xxxlarge){
+            padding: 0 60px 0 0;
+        }
+
+        @include respond-to(xlarge){
+            padding: 0 20px 0 0;
+        }
+
+        @include respond-to(bsmobile){
+            padding: 0;
+        }
+
+        .text_block{
+            text-align: center;
+            z-index: 2;
+            min-width: 300px;
+        }
+
+        .hovered{
+            position: absolute;
+            top:65%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            visibility: hidden;
+            opacity: 0;
+            z-index: 2;
+            min-width: 300px;
+            transition: all 0.5s ease-in-out;
+
+            @include respond-to(tab-ls){
+                display: none;
+            }
+
+            @include respond-to(phablet){
+                display: block;
+                visibility: visible;
+                opacity: 1;
+
+            }
+        }
+
+        .btn_project{
+            color:#fff;
+            border-radius: 8px;
+            border: 1px solid #f6ac00 !important;
+            padding: 0.4em 1.5em 0.5em;
+            background: transparent;
+            margin-top: 35px;
+            transition: all 0.5s ease-in-out;
+
+            &:hover{
+                background:rgba(255,255,255,0.1);
+                border: 1px solid #f6ac00;
+                color:#fff;
+            }
+
+            &:focus{
+                border: 1px solid #f6ac00;
+                background:rgba(255,255,255,0.1);
+            }
+
+            @include respond-to(xlarge){
+                margin-top: 20px;
+                padding: 0.3em 1.3em 0.4em;
+                font-size: 0.9em;
+            }
+
+            @include respond-to(mobilesm){
+                font-size: 0.8em;
+            }
+        }
+
+        .name{
+            color:#eaeaea;
+            font-family: "Segoe UI", serif;
+            font-size: 1.3em;
+            font-weight: 600;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 80%;
+            z-index: 2;
+            transition: all 0.5s ease-in-out;
+            text-transform: uppercase;
+
+            @include respond-to(xlarge){
+                font-size: 1.1em;
+            }
+
+            @include respond-to(tabs){
+                font-size: 0.8em;
+            }
+
+            @include respond-to(phablet){
+                font-size: 1em;
+                top:32%;
+            }
+
+            @include respond-to(mobilesm){
+                font-size: 0.9em;
+            }
+        }
+
+        .item_type{
+            color: #eaeaea;
+            font-family: "Segoe UI", serif;
+            font-size: 0.9em;
+            font-style: italic;
+            font-weight: 500;
+            border-radius: 8px;
+            letter-spacing: 1px;
+            max-width: 250px;
+            text-align: center;
+            margin: 22px auto 0;
+            padding: 2px 0;
+            background: #ab6370;
+
+            @include respond-to(xlarge){
+                max-width: 220px;
+                font-size: 0.8em;
+                margin-top: 25px;
+            }
+
+            @include respond-to(mobilesm){
+                font-size: 0.7em;
+                max-width: 200px;
+            }
+        }
+    }
+
+    .overlay{
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(90, 90, 90, 0.7);
+        border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+.portfolios{
+    h3{
+        font-size:22px;
+        line-height: 1;
+        margin-bottom: 10px;
+
+        @include respond-to(phablet){
+            font-size:20px;
+        }
+
+        @include respond-to(mobile){
+            font-size:18px;
+        }
+    }
+
+    h5{
+        font-size: 12px;
+        display: inline-block;
+        padding: 2px 15px 4px;
+        background: #ab6370;
+        color:#fff;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+}
+
+.tech_wrapper{
+    h4{
+        color: $sidenavColor;
+        margin-top: 10px;
+        font-size:20px;
+
+        @include respond-to(phablet){
+            font-size:19px;
+        }
+
+        @include respond-to(mobile){
+            font-size:17px;
+        }
+    }
+
+    ul{
+        min-width: 800px;
+        max-width: 800px;
+        margin: 20px 0 30px;
+
+        @include respond-to(tabs){
+            min-width: 530px;
+            max-width: 530px;
+            margin-right: 0;
+            padding-left: 35px;
+        }
+
+        @include respond-to(mobile){
+            max-width: 90%;
+            min-width: 90%;
+        }
+
+        li{
+            display: inline-block;
+            margin-right: 60px;
+            background:#d0d0d0;
+            margin-bottom: 15px;
+            position: relative;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+            padding-left: 20px;
+            font-weight: 500;
+            max-width: 185px;
+            min-width: 185px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-size:15px;
+
+            @include respond-to(phablet){
+                margin-right: 40px;
+            }
+
+            @include respond-to(mobile){
+                font-size:13px;
+                max-width: 100%;
+                min-width: 100%;
+                margin-right: 0;
+                height: 30px;
+                vertical-align: middle;
+                padding-top: 4px;
+            }
+
+            &:before{
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -26px;
+                width: 0;
+                height: 0;
+                border-color: transparent #d0d0d0 transparent transparent;
+                border-style: solid;
+                border-width: 12px 26px 12px 0;
+
+                @include respond-to(mobile){
+                    border-width:15px 26px 15px 0;
+                }
+            }
+
+            &:after{
+                content:"";
+                position:absolute;
+                display: block;
+                top: 10px;
+                left: -4px;
+                width:6px;
+                height:6px;
+                border-radius: 6px;
+                background:#fff;
+                box-shadow:-1px -1px 2px #004977;
+
+                @include respond-to(mobile){
+                    top: 13px;
+                }
+            }
+        }
+    }
+}
+
+.view_site_wrapper{
+    .view_site{
+        background: $sideNavBgColor;
+        color:$white;
+        font-weight: 500;
+        letter-spacing: 2px;
+        padding: 8px 50px;
+        margin: 0 0 30px;
+        font-size: 16px;
+
+        @include respond-to(phablet){
+            padding: 8px 20px;
+            margin: 0 0 20px;
+            font-size: 14px;
+        }
+    }
+
+    .view_site.hover, .view_site:hover,
+    .view_site.focus, .view_site:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(207, 112, 129,0.5);
+    }
+}
+
+.grid_image_wrapper{
+    .grid_image{
+        margin-bottom: 40px;
+        max-height: 280px;
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.3), 0 1px 5px rgba(0,0,0,0.4);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        text-align: center;
+
+        @include respond-to(xxlargemin){
+            max-height: 380px;
+        }
+
+        @include respond-to(slarge){
+            max-height: 180px;
+            margin-bottom: 20px;
+        }
+
+        @include respond-to(tabs){
+            max-height: 140px;
+        }
+
+        @include respond-to(phablet){
+            max-height: 120px;
+        }
+
+        @include respond-to(bsmobile){
+            max-height: 160px;
+        }
+
+        .btn_project{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin:0;
+            background: rgba(255,255,255,0.8);
+            color:#000;
+            border-radius: 8px;
+            border: 1px solid #f6ac00;
+            transition: all 0.5s ease-in-out;
+
+            &:hover{
+                color:#000;
+            }
+
+            &:focus,&:hover,&.focus,&.hover{
+                background: rgba(255,255,255,0.8) !important;
+                box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.4) !important;
+            }
+
+            @include respond-to(tab-ls){
+                font-size: 12px;
+            }
+        }
+
+        img{
+            border-radius: 8px;
+        }
+
+        &:hover{
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+            @include respond-to(tab-ls){
+                box-shadow:none;
+            }
+        }
+
+        &:hover .overlay{
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .overlay{
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            cursor: pointer;
+            background-color: rgba(180, 108, 130, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            border-radius: 8px;
+            transition: all 0.4s ease-in-out;
+
+            @include respond-to(tab-ls){
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.portfolio_modal{
+    img{
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        margin-top: 70px;
+    }
+
+    .modal_body{
+        text-align: center;
+        padding: 25px 40px;
+
+        @include respond-to(phablet){
+            padding: 20px;
+        }
+    }
+
+    .modal_header {
+        position: fixed;
+        max-width: 1800px;
+        width: 99%;
+        background: #fff;
+        z-index: 10;
+    }
+
+    &.modal_xl{
+        @include respond-to(xlarge){
+            max-width: 1800px;
+        }
+
+        @include respond-to(xlargemin){
+            max-width: 1800px;
+            margin-top: 0;
+        }
+
+        @include respond-to(xlarge){
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        @include respond-to(phablet){
+            margin: 0;
+        }
+    }
+}
