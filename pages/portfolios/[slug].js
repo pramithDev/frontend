@@ -1,6 +1,6 @@
 import API from "../../lib/api";
 import styles from '../../styles/Portfolio.module.scss'
-import Gallery from "./gallery";
+import Gallery from "../../components/PortfolioItems/gallery";
 const cx = (...classNames) => classNames.join(' ');
 
 const PortfolioItem = ({ portfolio }) => {
@@ -51,7 +51,7 @@ export async function getStaticPaths() {
   }
   
   export async function getStaticProps({ params }) {
-    const res = await API.get('/portfolios');
+    const res = await API.get(`/portfolios/${params.slug}`);
     const portfolios = res.data;
   
     return {
@@ -59,7 +59,7 @@ export async function getStaticPaths() {
         // Since our slug should be unique we can use
         // it to find the post with the matching slug,
         // this will be the post we need to render
-        portfolio: portfolios.find((portfolio) => portfolio.slug === params.slug ),
+        portfolio: portfolios,
       },
       revalidate: 1,
     };
