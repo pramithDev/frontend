@@ -6,7 +6,7 @@ const fetcher = urlApi => API.get(urlApi).then(res => res.data)
 
 const Portfolios = (props) => {
 
-    const { data, error } = useSWR('/services', fetcher, { initialData: props.portfolios })
+    const { data, error } = useSWR('/portfolios', fetcher, { initialData: props.portfolios })
     if (error) return <div>failed to load</div>
     if (!data) return <div>loading...</div>
 
