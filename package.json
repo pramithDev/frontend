@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
@@ -15,10 +15,11 @@
     "bootstrap": "^4.6",
     "moment": "^2.29.1",
     "next": "^10.2.3",
+    "node-sass": "^4.14.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-moment": "^1.1.1",
     "reactstrap": "^8.9.0",
-    "sass": "^1.32.13"
+    "swr": "^0.5.6"
   }
 }

@@ -39,29 +39,28 @@ const PortfolioItem = ({ portfolio }) => {
 export async function getStaticPaths() {
     const res = await API.get('/portfolios')
     const portfolios = res.data;
+
+    const paths = portfolios.map((portfolio) => ({
+      params: {
+        slug: portfolio.slug,
+      },
+    }))
     
-    return {
-      paths: portfolios.map((portfolio) => ({
-        params: {
-          slug: portfolio.slug,
-        },
-      })),
-      fallback: false,
-    };
+    return { paths, fallback: false };
   }
   
   export async function getStaticProps({ params }) {
     const res = await API.get(`/portfolios/${params.slug}`);
-    const portfolios = res.data;
+    const portfolio = res.data;
   
     return {
       props: {
         // Since our slug should be unique we can use
         // it to find the post with the matching slug,
         // this will be the post we need to render
-        portfolio: portfolios,
+        portfolio
       },
-      revalidate: 1,
+      revalidate: 10,
     };
   }
  

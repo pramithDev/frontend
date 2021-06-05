@@ -1,11 +1,12 @@
 import App from "next/app";
-import Layout from '../components/Layout'
-import '../styles/globals.scss'
 import Head from "next/head";
 import { createContext } from "react";
 import API from "../lib/api";
+import Layout from '../components/Layout'
 import { getStrapiMedia } from "../lib/media";
+
 import '../styles/sass/bootstrap.scss';
+import '../styles/globals.scss'
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
@@ -34,14 +35,14 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-MyApp.getInitialProps = async (ctx) => {
+MyApp.getInitialProps = async (appContext) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getInitialProps(ctx);
+  const appProps = await App.getInitialProps(appContext);
   // Fetch global site settings from Strapi
   
   try {
     const res = await API.get('/global');
-    const global = await res.data;
+    const global = res.data;
     return { ...appProps, pageProps: { global } };
   } catch (error) {
     return { error };

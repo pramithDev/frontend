@@ -5,7 +5,7 @@ import { Form, FormGroup, Input, Button, Modal, ModalBody, ModalFooter } from 'r
 import { useState } from "react";
 import Image from 'next/image'
 
-const Contact = ({contact}) => {
+const Contact = ({contactData}) => {
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -54,14 +54,14 @@ const Contact = ({contact}) => {
         <>
             <h3>Contact Us</h3>
             <div className={styles.contact_wrapper}>
-                <p>{contact.description}</p>
+                <p>{contactData.description}</p>
 
                 <div className={styles.contact_item}>
                     <span className={styles.icon}>
                         <FontAwesomeIcon icon="phone-alt" size="lg" />
                     </span>
                     <span className={styles.text}>
-                        {contact.telNo}
+                        {contactData.telNo}
                     </span>
                 </div>
 
@@ -70,7 +70,7 @@ const Contact = ({contact}) => {
                         <FontAwesomeIcon icon="envelope" size="lg" />
                     </span>
                     <span className={styles.text}>
-                        {contact.email}
+                        {contactData.email}
                     </span>
                 </div>
 
@@ -126,11 +126,11 @@ const Contact = ({contact}) => {
 
 export const getStaticProps = async () => {
     const res = await API.get('/contact')
-    const contact = res.data;
+    const contactData = res.data;
     
     return {
-      props: { contact },
-      revalidate: 1,
+      props: { contactData },
+      revalidate: 10,
     };
 }
  
