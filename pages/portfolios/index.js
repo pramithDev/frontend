@@ -1,29 +1,19 @@
 import API from "../../lib/api";
 import PortfolioItems from '../../components/PortfolioItems/PortfolioItems'
-import useSWR from 'swr';
 
-const fetcher = urlApi => API.get(urlApi).then(res => res.data)
-
-const Portfolios = (props) => {
-
-    const { data, error } = useSWR('/portfolios', fetcher, { initialData: props.portfolios })
-    if (error) return <div>failed to load</div>
-    if (!data) return <div>loading...</div>
-
+const Portfolios = ({portfolios}) => {
     // console.log(data);
     return (
         <>
            <h3>Portfolios</h3>
-           <PortfolioItems portfolios={data} />
+           <PortfolioItems portfolios={portfolios} />
         </>
     )
 }
 
 export const getStaticProps = async () => {
-    // const res = await API.get('/portfolios');
-    // const portfolios = res.data;
-
-    const portfolios = await fetcher('/portfolios')
+    const res = await API.get('/portfolios');
+    const portfolios = res.data;
   
     return {
       props: { portfolios },

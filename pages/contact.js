@@ -3,9 +3,8 @@ import styles from '../styles/Contact.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Form, FormGroup, Input, Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import { useState } from "react";
-import Image from 'next/image'
 
-const Contact = ({contactData}) => {
+const Contact = ({contact}) => {
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -28,7 +27,9 @@ const Contact = ({contactData}) => {
         e.preventDefault();
 
         try {
-            const response = await API.post(`/inquires`, values)
+            const response = await API.post(`/inquires`, values,{
+                headers: { accept: "Accept: application/json" }
+            })
             .then((response) => {
                 if (response.status === 200){
                     resetForm();
@@ -54,14 +55,14 @@ const Contact = ({contactData}) => {
         <>
             <h3>Contact Us</h3>
             <div className={styles.contact_wrapper}>
-                <p>{contactData.description}</p>
+                <p>{contact.description}</p>
 
                 <div className={styles.contact_item}>
                     <span className={styles.icon}>
                         <FontAwesomeIcon icon="phone-alt" size="lg" />
                     </span>
                     <span className={styles.text}>
-                        {contactData.telNo}
+                        {contact.telNo}
                     </span>
                 </div>
 
@@ -70,7 +71,7 @@ const Contact = ({contactData}) => {
                         <FontAwesomeIcon icon="envelope" size="lg" />
                     </span>
                     <span className={styles.text}>
-                        {contactData.email}
+                        {contact.email}
                     </span>
                 </div>
 
@@ -106,12 +107,12 @@ const Contact = ({contactData}) => {
                 <ModalBody>
                     {successForm ?
                         <div className={styles.msg_wrapper}>
-                            <Image src="/images/success.PNG" alt="Success" width={90} height={80} />
+                            <FontAwesomeIcon icon={["far", "check-circle"]} color="#a5dc86"/>
                             <h3>Send Successfully!</h3>
                         </div>
                         :
                         <div className={styles.msg_wrapper}>
-                            <Image src="/images/fail.PNG" alt="Fail" width={90} height={80} />
+                            <FontAwesomeIcon icon={["far", "times-circle"]} color="#f27474"/>
                             <h3>Send Failed!</h3>
                         </div>
                     }
@@ -126,10 +127,10 @@ const Contact = ({contactData}) => {
 
 export const getStaticProps = async () => {
     const res = await API.get('/contact')
-    const contactData = res.data;
+    const contact = res.data;
     
     return {
-      props: { contactData },
+      props: { contact },
       revalidate: 10,
     };
 }

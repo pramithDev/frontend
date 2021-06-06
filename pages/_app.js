@@ -10,10 +10,11 @@ import '../styles/globals.scss'
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
-import { faUser, faTh, faServer, faAddressCard, faTty, faEye, faPhoneAlt, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import { faUser, faTh, faServer, faAddressCard, faTty, faEye, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle, faCheckCircle} from '@fortawesome/free-regular-svg-icons';
 
 config.autoAddCss = false;
-library.add(faUser, faTh, faServer, faAddressCard, faTty, faEye, faPhoneAlt, faEnvelope);
+library.add(faUser, faTh, faServer, faAddressCard, faTty, faEye, faPhoneAlt, faEnvelope, faTimesCircle, faCheckCircle);
 
 export const GlobalContext = createContext({});
 function MyApp({ Component, pageProps }) {
