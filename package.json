@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build -o _static",
-    "start": "next start -H 0.0.0.0 -p ${PORT:-5000}",
-    "export": "next build && next export"
+    "start": "next start",
+    "export": "next build && next export && mv out _static"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
