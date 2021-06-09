@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import styles from '../styles/Layout.module.scss'
-import Image from "./image";
-import { useContext, useState, useEffect } from "react";
+// import Image from "./image";
+import { useState, useEffect } from "react";
 
-import { GlobalContext } from '../pages/_app'
+// import { GlobalContext } from '../pages/_app'
 
 const cx = (...classNames) => classNames.join(' ');
 
 const Header = () => {
-    const global = useContext(GlobalContext);
+    // const global = useContext(GlobalContext);
     const [scroll, setScroll] = useState(0);
 
     useEffect(() => {
@@ -25,19 +25,21 @@ const Header = () => {
             <div className={styles.logo_wrapper}>
                 <Link href='/'>
                     <a>
-                        <Image image={global.logo} />
+                        {/* <Image image={global.logo} /> */}
+                        Sample Logo
                     </a>
                 </Link>
             </div>
             <div className={styles.social_wrapper}>
                 <ul>
-                    {global.social_medias.map((item) => (
+                    {/* {global.social_medias.map((item) => (
                         <li key = {item.id}>
                         <a href={item.url} target="_blank" rel="noopener noreferrer">
                             <Image image={item.icon} />
                         </a>
                     </li>
-                    ))}
+                    ))} */}
+                    <li>Sample Text</li>
                 </ul>
             </div>
         </div>
