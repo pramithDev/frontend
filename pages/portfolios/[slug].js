@@ -60,7 +60,7 @@ export async function getStaticPaths() {
         // this will be the post we need to render
         portfolio
       },
-      revalidate: 10,
+      revalidate: 1,
     };
   }
  

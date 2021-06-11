@@ -131,7 +131,7 @@ export const getStaticProps = async () => {
     
     return {
       props: { contact },
-      revalidate: 10,
+      revalidate: 1,
     };
 }
  
