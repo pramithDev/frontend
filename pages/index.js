@@ -20,7 +20,7 @@ export default function Home({about}) {
                 {/* <div className={styles.about_text_wrapper} dangerouslySetInnerHTML={{ __html: about.aboutText }}></div> */}
                 <div className={styles.about_text}>{about.aboutText}</div>
              
-                <a className="cv-bt" href={process.env.API_BASE_URL + about.cv.url} target="_blank" rel="noopener noreferrer">
+                <a className="cv-bt" href={about.cv.url} target="_blank" rel="noopener noreferrer">
                     <Button className={styles.download_btn}>
                       <FontAwesomeIcon icon="eye" size="lg" className="mr-2" />
                         View CV
