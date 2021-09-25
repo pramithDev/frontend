@@ -10,7 +10,7 @@ export default function Home({about}) {
   return (
     <>
       <div className={styles.name_post_wrapper}>
-          <h1><span>I'm </span>{about.name}</h1>
+          <h1><span>I&apos;m </span>{about.name}</h1>
           <p className={styles.title_post}>{about.post}</p>
       </div>
       <Container fluid={true}>
@@ -30,7 +30,7 @@ export default function Home({about}) {
               </Col>
               <Col md="6" xl="6" className="p-0">
                   <div className={styles.image_wrapper}>
-                    <Image image={about.aboutImage} />
+                    <Image image={about.aboutImage} alt="About Image" />
                     {/* <Image image={process.env.API_BASE_URL + about.aboutImage.provider_metadata.public_id} /> */}
                   </div>
               </Col>

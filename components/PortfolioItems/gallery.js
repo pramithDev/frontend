@@ -21,6 +21,7 @@ const Gallery = ({portfolio}) => {
                                 maxWidth: "100%",
                                 height: "auto"
                             }}
+                            alt="GALLERY ITEM"
                         />
 
                         <div className={styles.overlay} onClick={() => toggle(item)}>
@@ -36,6 +37,7 @@ const Gallery = ({portfolio}) => {
                                         maxWidth: "100%",
                                         height: "auto"
                                     }}
+                                    alt="GALLERY ITEM"
                                 />
                             </ModalBody>
                         </Modal>

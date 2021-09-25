@@ -14,7 +14,7 @@ const Services = ({services}) => {
                             <Col xl="6" className={styles.service_item_wrapper} key={service.id}>
                                 <div className={styles.service_item}>
                                     <span>
-                                        <Image image={service.image} />
+                                        <Image image={service.image} alt="SERVICE IMAGE"/>
                                     </span>
                                     <div className={styles.content}>
                                         <h5>{service.title}</h5>
