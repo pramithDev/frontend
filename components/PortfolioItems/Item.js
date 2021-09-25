@@ -8,7 +8,7 @@ const Item = ({ portfolios }) => {
     return (
         <>
             {portfolios.map((item) => (
-                <Col className={styles.block} xs="auto" sm="6" md="4" xl="3" key={item.id}>
+                <Col className={styles.block} xs="auto" sm="6" md="4" xl="4" key={item.id}>
                     <Link href={`/portfolios/${item.slug}`} >
                         <a>
                             <Image 
@@ -22,7 +22,9 @@ const Item = ({ portfolios }) => {
                             <div className={styles.text_block}>
                                 <p className={styles.name}>{item.projectName}</p>
                                 <div className={styles.hovered}>
-                                    <p className={styles.item_type}>{item.workType}</p>
+                                    {item.work_types.map((item) => (
+                                        <p className={styles.item_type} key={item.id}>{item.tag}</p>
+                                    ))}
                                     <Button className={styles.btn_project}>View Project →</Button>
                                 </div>
                             </div>

@@ -9,7 +9,9 @@ const PortfolioItem = ({ portfolio }) => {
         <div className={cx(styles.portfolios, styles.detail_item)}>
             <h3>{portfolio.projectName}</h3>
 
-            <h5>{portfolio.workType}</h5>
+            {portfolio.work_types.map((item) => (
+              <h5 key={item.id}>{item.tag}</h5>
+            ))}
 
             <div className={styles.tech_wrapper}>
                 <h4>Used Technologies</h4>

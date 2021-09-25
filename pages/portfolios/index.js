@@ -12,7 +12,7 @@ const Portfolios = ({portfolios}) => {
 }
 
 export const getStaticProps = async () => {
-    const res = await API.get('/portfolios');
+    const res = await API.get('/portfolios?_sort=id:DESC');
     const portfolios = res.data;
   
     return {

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from "../components/image";
 
 export default function Home({about}) {
+  // console.log(about.aboutImage);
   return (
     <>
       <div className={styles.name_post_wrapper}>
@@ -30,6 +31,7 @@ export default function Home({about}) {
               <Col md="6" xl="6" className="p-0">
                   <div className={styles.image_wrapper}>
                     <Image image={about.aboutImage} />
+                    {/* <Image image={process.env.API_BASE_URL + about.aboutImage.provider_metadata.public_id} /> */}
                   </div>
               </Col>
           </Row>
