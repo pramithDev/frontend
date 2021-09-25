@@ -25,7 +25,7 @@ const Header = () => {
             <div className={styles.logo_wrapper}>
                 <Link href='/'>
                     <a>
-                        <Image image={global.logo} />
+                        <Image image={global.logo}  alt="PRAMITHDEV LOGO"/>
                     </a>
                 </Link>
             </div>
@@ -34,7 +34,7 @@ const Header = () => {
                     {global.social_medias.map((item) => (
                         <li key = {item.id}>
                         <a href={item.url} target="_blank" rel="noopener noreferrer">
-                            <Image image={item.icon} />
+                            <Image image={item.icon} alt="SOCIAL MEDIAS" />
                         </a>
                     </li>
                     ))}

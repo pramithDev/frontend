@@ -18,6 +18,7 @@ const Item = ({ portfolios }) => {
                                     maxWidth: "100%",
                                     height: "auto"
                                 }}
+                                alt="PORTFOLIO ITEM"
                             />
                             <div className={styles.text_block}>
                                 <p className={styles.name}>{item.projectName}</p>
