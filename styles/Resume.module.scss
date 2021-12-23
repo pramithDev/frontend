@@ -32,6 +32,11 @@
 
         .duration_post{
             font-weight: 500;
+
+            span{
+                font-weight: 400;
+            }
+            
             @include respond-to(phablet){
                 font-size: 16px;
                 margin-bottom: 8px;
@@ -77,9 +82,10 @@
             padding-left: 20px;
 
             li{
-                display: inline-block;
+                display: block;
                 margin-right: 45px;
                 position: relative;
+                padding-left: 4px;
 
                 @include respond-to(phablet){
                     font-size: 14px;
@@ -89,7 +95,7 @@
                     content:"";
                     position:absolute;
                     display: block;
-                    top: 10px;
+                    top: 9px;
                     left: -12px;
                     width:8px;
                     height:8px;

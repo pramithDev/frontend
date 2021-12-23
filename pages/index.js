@@ -11,7 +11,7 @@ export default function Home({about}) {
     <>
       <div className={styles.name_post_wrapper}>
           <h1><span>I&apos;m </span>{about.name}</h1>
-          <p className={styles.title_post}>{about.post}</p>
+          <p className={styles.title_post}>{about.postTitle}</p>
       </div>
       <Container fluid={true}>
           <Row>

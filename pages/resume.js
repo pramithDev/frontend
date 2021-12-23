@@ -15,7 +15,7 @@ const Resume = ({resumes}) => {
                                 <div className={styles.resume_item} key={resume.id}>
                                     <h5>{resume.companyName}</h5>
                                     <p className={styles.duration_post}>
-                                        <Moment format="MMM YYYY">{resume.startDate}</Moment> - <Moment format="MMM YYYY">{resume.endDate}</Moment> : {resume.post}
+                                        <span><Moment format="MMM YYYY">{resume.startDate}</Moment> - {(resume.endDate == null ) ? 'Present' : <Moment format="MMM YYYY">{resume.endDate}</Moment>  } </span>  &nbsp; : &nbsp; {resume.post}
                                     </p>
                                     <p>{resume.description}</p>
                                     <ul className={styles.list}>
@@ -34,7 +34,7 @@ const Resume = ({resumes}) => {
 }
 
 export const getStaticProps = async () => {
-    const res = await API.get('/resumes')
+    const res = await API.get('/resumes?_sort=id:DESC')
     const resumes = res.data;
 
     return {
