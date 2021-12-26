@@ -4,4 +4,5 @@ module.exports = {
         domains: ["res.cloudinary.com"],
         disableStaticImages: true,
     },
+    trailingSlash: true,
 };
