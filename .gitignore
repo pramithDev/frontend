@@ -35,3 +35,4 @@ yarn-error.log*
 /_static
 /*.env
 /.history
+/package-lock.json
