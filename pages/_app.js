@@ -23,6 +23,14 @@ function MyApp({ Component, pageProps }) {
   return (
       <>
         <Head>
+          <title>PRAMITHDEV</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="description" content="Hello, I'm Pramith,an experienced web developer in building high quality web sites and web apps, with more than 5 years experience." />
+          <meta property="og:title" content="Pramithdev Portfolio" />
+          <meta property="og:image" content="https://res.cloudinary.com/pramithex/image/upload/f_auto/v1624812488/logo_b7451c3002.png"></meta>
+          <meta property="og:description" content="Hello, I'm Pramith,an experienced web developer in building high quality web sites and web apps, with more than 5 years experience." />
+          <meta property="og:url" content="https://pramithdev.com/" />
+          <meta property="og:type" content="website" />
           <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
         </Head>
         <GlobalContext.Provider value={global}>

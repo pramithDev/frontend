@@ -1,5 +1,6 @@
 // import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.scss';
+import Head from "next/head";
 import API from "../lib/api";
 import { Row, Col, Container, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +10,9 @@ export default function Home({about}) {
   // console.log(about.aboutImage);
   return (
     <>
+      <Head>
+        <title>About - PRAMITHDEV</title>
+      </Head>
       <div className={styles.name_post_wrapper}>
           <h1><span>I&apos;m </span>{about.name}</h1>
           <p className={styles.title_post}>{about.postTitle}</p>

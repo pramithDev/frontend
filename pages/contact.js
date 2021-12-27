@@ -1,4 +1,5 @@
 import API from "../lib/api";
+import Head from "next/head";
 import styles from '../styles/Contact.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Form, FormGroup, Input, Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
@@ -53,6 +54,9 @@ const Contact = ({contact}) => {
 
     return ( 
         <>
+            <Head>
+                <title>Contact - PRAMITHDEV</title>
+            </Head>
             <h3>Contact Us</h3>
             <div className={styles.contact_wrapper}>
                 <p>{contact.description}</p>

@@ -1,4 +1,5 @@
 import API from "../lib/api";
+import Head from "next/head";
 import { Container, Row, Col } from 'reactstrap';
 import styles from '../styles/Resume.module.scss'
 import Moment from "react-moment";
@@ -6,6 +7,9 @@ import Moment from "react-moment";
 const Resume = ({resumes}) => {
     return ( 
         <>
+            <Head>
+                <title>Resume - PRAMITHDEV</title>
+            </Head>
             <h3>Resume</h3>
             <Container fluid={true} className={styles.main_resume_wrapper}>
                 <Row>

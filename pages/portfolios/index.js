@@ -1,12 +1,16 @@
 import API from "../../lib/api";
+import Head from "next/head";
 import PortfolioItems from '../../components/PortfolioItems/PortfolioItems'
 
 const Portfolios = ({portfolios}) => {
     // console.log(data);
     return (
         <>
-           <h3>Portfolios</h3>
-           <PortfolioItems portfolios={portfolios} />
+            <Head>
+                <title>Portfolios - PRAMITHDEV</title>
+            </Head>
+            <h3>Portfolios</h3>
+            <PortfolioItems portfolios={portfolios} />
         </>
     )
 }

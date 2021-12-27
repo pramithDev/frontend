@@ -1,4 +1,5 @@
 import API from "../lib/api";
+import Head from "next/head";
 import { Container, Row, Col } from 'reactstrap';
 import Image from "../components/image";
 import styles from '../styles/Service.module.scss'
@@ -6,6 +7,9 @@ import styles from '../styles/Service.module.scss'
 const Services = ({services}) => {
     return ( 
         <>
+            <Head>
+                <title>Services - PRAMITHDEV</title>
+            </Head>
            <h3>Services</h3>
            <Container fluid={true} className={styles.services_wrapper_container}>
                 <Row className={styles.services_wrapper}>
