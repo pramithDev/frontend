@@ -60,3 +60,11 @@
   margin: 0 !important;
   line-height: 1;
 }
+
+.cv-bt{
+  display: inline-block;
+  
+  @include respond-to(phablet){
+      margin-bottom: 20px;
+  }
+}

@@ -18,6 +18,10 @@
     white-space: pre-wrap;
     max-width: 500px;
     margin-bottom: 20px;
+
+    @include respond-to(phablet){
+        margin-top: 80px;
+    }
 }
 
 .download_btn{
@@ -65,7 +69,7 @@
   right: 85px;
 
   @include respond-to(phablet){
-      top: 180px;
+      top: 210px;
       left: 20px
   }
 
@@ -74,9 +78,13 @@
       font-weight: 700;
       margin: 0;
 
-      @include respond-to(phablet){
-          font-size: 22px;
-      }
+        @include respond-to(tabs){
+            font-size: 28px;
+        }
+
+        @include respond-to(phablet){
+            font-size: 22px;
+        }
   }
 
   h1 span{
@@ -84,9 +92,13 @@
       font-weight: normal;
       color: $btnColor;
 
-      @include respond-to(phablet){
-          font-size: 20px;
-      }
+        @include respond-to(tabs){
+            font-size: 28px;
+        }
+
+        @include respond-to(phablet){
+            font-size: 20px;
+        }
   }
 
   .title_post{
@@ -95,9 +107,13 @@
       font-weight: 600;
       margin: 0;
 
-      @include respond-to(phablet){
-          font-size: 14px;
-      }
+        @include respond-to(tabs){
+            font-size: 22px;
+        }
+
+        @include respond-to(phablet){
+            font-size: 14px;
+        }
   }
 }
 
