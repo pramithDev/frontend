@@ -16,13 +16,13 @@ const Portfolios = ({portfolios}) => {
 }
 
 export const getStaticProps = async () => {
-    const res = await API.get('/portfolios?_sort=id:DESC');
-    const portfolios = res.data;
-  
-    return {
-      props: { portfolios },
-      revalidate: 1,
-    };
-  }
+  const res = await API.get('/portfolios?_sort=id:DESC');
+  const portfolios = res.data;
+
+  return {
+    props: { portfolios },
+    revalidate: 1,
+  };
+}
 
 export default Portfolios
