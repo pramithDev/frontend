@@ -1,129 +1,138 @@
 @import "./sass/variables.scss";
 @import "./sass/mixins.scss";
 
-.image_wrapper{
+.image_wrapper {
   margin-top: 90px;
 
-  @include respond-to(phablet){
-      margin-top: 0;
+  @include respond-to(phablet) {
+    margin-top: 0;
   }
 
-  img{
+  img {
     max-width: 100%;
     height: auto;
   }
 }
 
-.about_text{
-    white-space: pre-wrap;
-    max-width: 500px;
-    margin-bottom: 20px;
+.about_text {
+  white-space: pre-wrap;
+  max-width: 500px;
+  margin-bottom: 20px;
 
-    @include respond-to(phablet){
-        margin-top: 80px;
-    }
+  @include respond-to(phablet) {
+    margin-top: 80px;
+  }
+
+  @include respond-to(mobilesm) {
+    margin-top: 100px;
+  }
 }
 
-.download_btn{
+.download_btn {
   padding-top: 8px;
   transition: all 0.3s ease-in-out;
   background: $btnColor;
   font-size: 15px;
 
-  img{
-      margin-right: 5px;
-      display: inline-block;
-      width: 23px;
+  img {
+    margin-right: 5px;
+    display: inline-block;
+    width: 23px;
 
-      @include respond-to(phablet){
-          width: 18px;
-      }
+    @include respond-to(phablet) {
+      width: 18px;
+    }
   }
 
-  @include respond-to(phablet){
-      font-size: 12px;
-      padding: 4px 15px 3px;
-      height: 40px;
+  @include respond-to(phablet) {
+    font-size: 12px;
+    padding: 4px 15px 3px;
+    height: 40px;
   }
 }
 
-.view_cv{
+.view_cv {
   margin-left: 15px;
 
-  img{
-      width: 26px;
+  img {
+    width: 26px;
 
-      @include respond-to(phablet){
-          width: 20px;
-      }
+    @include respond-to(phablet) {
+      width: 20px;
+    }
   }
 }
 
-.cv-bt{
+.cv-bt {
   display: inline-block;
 }
 
-.name_post_wrapper{
+.name_post_wrapper {
   position: absolute;
   top: 95px;
   right: 85px;
 
-  @include respond-to(phablet){
-      top: 210px;
-      left: 20px
+  @include respond-to(phablet) {
+    top: 210px;
+    left: 20px
   }
 
-  h1{
-      color:$h2Color;
-      font-weight: 700;
-      margin: 0;
-
-        @include respond-to(tabs){
-            font-size: 28px;
-        }
-
-        @include respond-to(phablet){
-            font-size: 22px;
-        }
+  @include respond-to(mobilesm) {
+    top: 238px;
+    left: 10px
   }
 
-  h1 span{
-      font-size: 42px;
-      font-weight: normal;
-      color: $btnColor;
+  h1 {
+    color: $h2Color;
+    font-weight: 700;
+    margin: 0;
 
-        @include respond-to(tabs){
-            font-size: 28px;
-        }
+    @include respond-to(tabs) {
+      font-size: 28px;
+    }
 
-        @include respond-to(phablet){
-            font-size: 20px;
-        }
-  }
-
-  .title_post{
-      color: $btnColor;
+    @include respond-to(phablet) {
       font-size: 22px;
-      font-weight: 600;
-      margin: 0;
+    }
+  }
 
-        @include respond-to(tabs){
-            font-size: 22px;
-        }
+  h1 span {
+    font-size: 42px;
+    font-weight: normal;
+    color: $btnColor;
 
-        @include respond-to(phablet){
-            font-size: 14px;
-        }
+    @include respond-to(tabs) {
+      font-size: 28px;
+    }
+
+    @include respond-to(phablet) {
+      font-size: 20px;
+    }
+  }
+
+  .title_post {
+    color: $btnColor;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+
+    @include respond-to(tabs) {
+      font-size: 22px;
+    }
+
+    @include respond-to(phablet) {
+      font-size: 14px;
+    }
   }
 }
 
-.about_text_wrapper{
-    p{
-        max-width: 500px;
-    
-        @include respond-to(phablet){
-            font-size: 14px;
-            max-width: 100%;
-        }
+.about_text_wrapper {
+  p {
+    max-width: 500px;
+
+    @include respond-to(phablet) {
+      font-size: 14px;
+      max-width: 100%;
     }
+  }
 }
