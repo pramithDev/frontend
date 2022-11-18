@@ -7,7 +7,7 @@
     "build": "next build",
     "postbuild": "node ./scripts/generate-sitemap.mjs",
     "start": "next start -p $PORT",
-    "export": "next build && next export",
+    "export": "next build && next export && npm run clean-copy",
     "lint": "next lint",
     "clean-dir": "rimraf ../out-build/*[!.git]",
     "copy-build": "copyfiles -u 1 out/**/*.* ../out-build",
