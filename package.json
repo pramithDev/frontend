@@ -14,6 +14,7 @@
     "clean-copy": "npm run clean-dir && npm run copy-build"
   },
   "dependencies": {
+    "@formspree/react": "^2.4.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",

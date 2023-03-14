@@ -2,55 +2,18 @@ import API from "../lib/api";
 import Head from "next/head";
 import styles from '../styles/Contact.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Form, FormGroup, Input, Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
-import { useState } from "react";
+import { Form, FormGroup, Input, Button } from 'reactstrap';
+
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = ({contact}) => {
-    const [values, setValues] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
-
-    // const { name, email, message } = values;
-    const [errorContactForm, setErrorContactForm] = useState(null);
-    const [modal, setModal] = useState(false);
-    const [successForm, setSuccessForm] = useState(false);
-
-    const handleInputChange = (event) => {
-        setValues((prevProps) => ({
-            ...prevProps,
-            [event.target.name]: event.target.value
-        }));
-    };
-
-    const handleSubmit = async e => {
-        e.preventDefault();
-
-        try {
-            const response = await API.post(`/inquires`, values,{
-                headers: { accept: "Accept: application/json" }
-            })
-            .then((response) => {
-                if (response.status === 200){
-                    resetForm();
-                    setModal(true);
-                    setSuccessForm(true);
-                }
-            });
-        } catch (error) {
-            setErrorContactForm(error);
-            resetForm();
-            setModal(true);
-            setSuccessForm(false);
-        }
-    }
-
+    const [state, handleSubmit] = useForm("xvolwodj");
+    
     const resetForm = () =>{
-        setValues({ name: "", email: "", message: "" });
+        if (typeof window !== "undefined") {
+            document.getElementById("contact-form").reset();
+        }
     };
-
-    const toggle = () => setModal(!modal);
 
     return ( 
         <>
@@ -78,53 +41,50 @@ const Contact = ({contact}) => {
                         {contact.email}
                     </span>
                 </div>
+                <Form id="contact-form" className={styles.contact_form} onSubmit={handleSubmit}>
+                    <FormGroup>
+                        <Input id="name" type="text" name="name" placeholder="Enter Name" required/>
+                        <p><ValidationError prefix="Name" field="name" errors={state.errors} /></p>
+                    </FormGroup>
+                    <FormGroup>
+                        <Input id="email" type="email" name="email" placeholder="Enter Email" required />
+                        <p><ValidationError prefix="Email" field="email" errors={state.errors} /></p>
+                    </FormGroup>
+                    <FormGroup>
+                        <Input  id="subject" type="text" name="subject"  placeholder="Enter Subject" required />
+                        <p><ValidationError prefix="Subject" field="subject" errors={state.errors} /></p>
+                    </FormGroup>
+                    <FormGroup>
+                        <Input type="textarea" rows="6" id="message" name="message" placeholder="Enter Message" required></Input>
+                        <ValidationError prefix="Message" field="message" errors={state.errors} />
+                    </FormGroup>
 
-                <Form className={styles.contact_form} onSubmit={handleSubmit}>
-                    <FormGroup>
-                        <Input type="text" placeholder="Enter Name" 
-                            name="name"
-                            value={values.name} 
-                            onChange={handleInputChange} 
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="email" placeholder="Enter Email" 
-                            name="email"
-                            value={values.email} 
-                            onChange={handleInputChange} 
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <Input type="textarea" rows="6" placeholder="Enter Message" 
-                            name="message"
-                            value={values.message} 
-                            onChange={handleInputChange} 
-                        />
-                    </FormGroup>
                     <div className={styles.btn_block}>
-                        <Button className={styles.send} type="submit" disabled={!(values.email && values.name && values.message )} >Send</Button>
-                        <Button className={styles.download_btn} disabled={!(values.email || values.name || values.message )} onClick={resetForm}>Cancel</Button>
+                        <Button type="submit" className={styles.send} disabled={state.submitting}>
+                            Send
+                        </Button>
+                        <Button className={styles.download_btn} onClick={resetForm}>Cancel</Button>
                     </div>
-                </Form>
-            </div>
-            <Modal isOpen={modal} className="contact_form_modal modal-dialog-centered">
-                <ModalBody>
-                    {successForm ?
+                    {/* <ValidationError errors={state.errors} /> */}
+                    {/* {state.errors ? 
                         <div className={styles.msg_wrapper}>
-                            <FontAwesomeIcon icon={["far", "check-circle"]} color="#a5dc86"/>
-                            <h3>Send Successfully!</h3>
+                            <h5 className="d-flex align-items-center"><FontAwesomeIcon className="m-0 mr-3" icon={["far", "times-circle"]} color="#f27474"/> Failed your submission!</h5>
+                            {resetForm()}
                         </div>
                         :
+                        <div>vcbcvb</div>
+                    } */}
+
+                    {state.succeeded ? 
                         <div className={styles.msg_wrapper}>
-                            <FontAwesomeIcon icon={["far", "times-circle"]} color="#f27474"/>
-                            <h3>Send Failed!</h3>
+                            <h5 className="d-flex align-items-center"><FontAwesomeIcon className="m-0 mr-3" icon={["far", "check-circle"]} color="#a5dc86"/> Thanks for your submission!</h5>
+                            {resetForm()}
                         </div>
+                        :
+                        <div></div>
                     }
-                </ModalBody>
-                <ModalFooter>
-                    <Button color="primary contact-modal-btn" onClick={toggle}>OK</Button>{' '}
-                </ModalFooter>
-            </Modal>
+                </Form>
+            </div>
         </>
      );
 }
