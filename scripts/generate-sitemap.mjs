@@ -27,7 +27,7 @@ async function generate() {
 
             return `
               <url>
-                <loc>${`https://pramithdev.com${route}`}</loc>
+                <loc>${`https://pramithdev.xyz${route}`}</loc>
                 <lastmod>${new Date().toISOString()}</lastmod>
                 <changefreq>monthly</changefreq>
                 <priority>1.0</priority>
