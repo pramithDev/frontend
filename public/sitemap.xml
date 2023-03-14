@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pramithdev.com/contact</loc>
-    <lastmod>2022-11-09T12:27:23.641Z</lastmod>
+    <loc>https://pramithdev.xyz/contact copy</loc>
+    <lastmod>2023-03-14T11:29:27.601Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://pramithdev.com</loc>
-    <lastmod>2022-11-09T12:27:23.641Z</lastmod>
+    <loc>https://pramithdev.xyz/contact</loc>
+    <lastmod>2023-03-14T11:29:27.601Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://pramithdev.com/resume</loc>
-    <lastmod>2022-11-09T12:27:23.641Z</lastmod>
+    <loc>https://pramithdev.xyz</loc>
+    <lastmod>2023-03-14T11:29:27.601Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://pramithdev.com/services</loc>
-    <lastmod>2022-11-09T12:27:23.641Z</lastmod>
+    <loc>https://pramithdev.xyz/resume</loc>
+    <lastmod>2023-03-14T11:29:27.601Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://pramithdev.xyz/services</loc>
+    <lastmod>2023-03-14T11:29:27.601Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
